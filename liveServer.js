@@ -2,9 +2,9 @@ const WebSocket = require('ws');
 
 // Define the initial count
 let count = 0;
-
+const port = 3301;
 // Create a WebSocket server
-const wss = new WebSocket.Server({ port: 3300 });
+const wss = new WebSocket.Server({ port: port });
 
 // Store the connected WebSocket clients
 const clients = new Set();
@@ -54,4 +54,4 @@ wss.on('connection', (ws) => {
   });
 });
 
-console.log('Server is running on ws://localhost:3300');
+console.log(`Server is running on ws://localhost:${port}`);
